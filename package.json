@@ -1,0 +1,19 @@
+{
+  "name": "@hpidcock/zipkin-context-async-hooks",
+  "version": "0.0.1",
+  "description": "Zipkin tracing context using async hooks.",
+  "main": "src/AsyncContext.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hpidcock/zipkin-context-async-hooks.git"
+  },
+  "author": "Harry Pidcock",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hpidcock/zipkin-context-async-hooks/issues"
+  },
+  "homepage": "https://github.com/hpidcock/zipkin-context-async-hooks#readme"
+}
