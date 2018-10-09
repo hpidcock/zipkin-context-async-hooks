@@ -4,18 +4,23 @@ const hooks = async_hooks.createHook({ init, before, after, destroy });
 hooks.enable();
 
 const context = {};
-let currentId = null;
+const idStack = [];
+let currentId = 0;
 
 function init(asyncId, type, triggerAsyncId, resource) {
   context[asyncId] = context[triggerAsyncId];
 }
 
 function before(asyncId) {
+  idStack.push(currentId);
   currentId = asyncId;
 }
 
 function after(asyncId) {
-  currentId = null;
+  if (currentId != asyncId) {
+    throw "bad async id";
+  }
+  currentId = idStack.pop();
 }
 
 function destroy(asyncId) {
@@ -48,4 +53,3 @@ class AsyncContext {
 }
 
 module.exports = new AsyncContext();
-
