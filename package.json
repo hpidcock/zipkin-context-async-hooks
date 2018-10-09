@@ -1,6 +1,6 @@
 {
   "name": "@hpidcock/zipkin-context-async-hooks",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Zipkin tracing context using async hooks.",
   "main": "src/AsyncContext.js",
   "scripts": {
