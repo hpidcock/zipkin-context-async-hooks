@@ -7,7 +7,7 @@ const context = {};
 
 function init(asyncId, type, triggerAsyncId, resource) {
   if (type == "PROMISE") {
-    context[asyncId] = context[hooks.executionAsyncId()];
+    context[asyncId] = context[async_hooks.executionAsyncId()];
     return;
   }
   context[asyncId] = context[triggerAsyncId];
