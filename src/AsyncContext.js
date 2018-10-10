@@ -6,6 +6,10 @@ hooks.enable();
 const context = {};
 
 function init(asyncId, type, triggerAsyncId, resource) {
+  if (type == "PROMISE") {
+    context[asyncId] = context[hooks.executionAsyncId()];
+    return;
+  }
   context[asyncId] = context[triggerAsyncId];
 }
 
